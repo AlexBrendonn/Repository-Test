@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/application</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL10Dialect</property>
+        <property name="connection_pool_size">true</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="cache.providerclass">org.hibernate.NoCacheProvider</property>
+
+        <mapping class="com.saa.web.entity.authentication.AuthenticationToken"/>
+        <mapping class="com.saa.web.entity.authentication.Organization"/>
+        <mapping class="com.saa.web.entity.authentication.Company"/>
+        <mapping class="com.saa.web.entity.authentication.User"/>
+    </session-factory>
+</hibernate-configuration>

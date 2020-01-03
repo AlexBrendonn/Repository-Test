@@ -1,0 +1,5 @@
+sudo ./glassfish5/bin/asadmin start-domain --debug domain1
+
+
+// Tipos de Parametros da Query Nativa no Hibernate
+https://docs.jboss.org/hibernate/orm/3.2/api/org/hibernate/type/Type.html
