@@ -1,5 +1,7 @@
 package com.saa.web.entity.authentication;
 
+import org.json.JSONObject;
+
 import javax.persistence.*;
 
 @Entity(name = "Company")
@@ -61,5 +63,14 @@ public class Company{
 
     public void setActive(Boolean active) {
         this.active = active;
+    }
+
+    public JSONObject toJSON() {
+        JSONObject object = new JSONObject();
+
+        object.put("id", this.id);
+        object.put("nickname", this.nickname);
+
+        return object;
     }
 }

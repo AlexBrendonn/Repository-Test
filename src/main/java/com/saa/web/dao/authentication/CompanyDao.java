@@ -2,6 +2,7 @@ package com.saa.web.dao.authentication;
 
 import com.saa.web.dao.MainDao;
 import com.saa.web.entity.authentication.Company;
+import com.saa.web.entity.authentication.Organization;
 
 import javax.persistence.criteria.*;
 import java.util.List;
@@ -26,10 +27,13 @@ public class CompanyDao extends MainDao<Company> {
         return session.get(Company.class, id);
     }
 
-    public List<Company> list() {
+    public List<Company> list(Organization organization) {
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<Company> query = builder.createQuery(Company.class);
-        query.from(Company.class);
+        Root root = query.from(Company.class);
+
+        query.where(builder.equal(root.get("organization"), organization.getId()));
+
         List<Company> data = session.createQuery(query).getResultList();
         return data;
     }

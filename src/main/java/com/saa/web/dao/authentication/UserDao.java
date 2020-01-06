@@ -1,6 +1,7 @@
 package com.saa.web.dao.authentication;
 
 import com.saa.web.dao.MainDao;
+import com.saa.web.entity.authentication.Company;
 import com.saa.web.entity.authentication.Organization;
 import com.saa.web.entity.authentication.User;
 
@@ -27,10 +28,12 @@ public class UserDao extends MainDao<User> {
         return session.get(User.class, id);
     }
 
-    public List<User> list() {
+    public List<User> list(Organization organization) {
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<User> query = builder.createQuery(User.class);
-        query.from(User.class);
+        Root root = query.from(Company.class);
+
+        query.where(builder.equal(root.get("organization"), organization.getId()));
         List<User> data = session.createQuery(query).getResultList();
         return data;
     }

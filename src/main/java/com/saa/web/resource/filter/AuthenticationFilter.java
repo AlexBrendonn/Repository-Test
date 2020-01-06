@@ -43,21 +43,27 @@ public class AuthenticationFilter implements ContainerRequestFilter {
         UriInfo info = request.getUriInfo();
         switch (info.getPath()) {
             case "status":
-            case "login": {
+            case "authentication/signIn": {
                 return;
             }
         }
 
         TokenJWT jwt = new TokenJWT();
+        Session session = HibernateUtil.getSession();
+
         try {
+            session.beginTransaction();
             jwt.valid(token);
             AuthenticationDao dao = new AuthenticationDao();
+
 
             AuthenticationToken authenticationToken = dao.checkToken(token, EAuthPlatform.WEB);
             Optional.ofNullable(authenticationToken).orElseThrow(() -> new NotAuthorizedException(Response.Status.UNAUTHORIZED));
 
             webRequest.getSession().setAttribute("authentication", authenticationToken);
+            session.getTransaction().commit();
         } catch (Exception e) {
+            session.getTransaction().rollback();
             request.abortWith(this.abortRequest());
         }
     }

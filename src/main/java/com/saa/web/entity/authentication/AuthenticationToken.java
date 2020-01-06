@@ -16,7 +16,7 @@ public class AuthenticationToken {
     @Column(name = "token", nullable = false, unique = true, columnDefinition = "text")
     private String token;
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = User.class)
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = User.class)
     @JoinColumn(name = "user_auth", nullable = false, updatable = false)
     private User user;
 
@@ -27,7 +27,7 @@ public class AuthenticationToken {
     @Column(name = "created_at", nullable = false)
     private ZonedDateTime createdAt = ZonedDateTime.now();
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = Organization.class)
     @JoinColumn(name = "organization", nullable = false, updatable = false)
     private Organization organization;
 

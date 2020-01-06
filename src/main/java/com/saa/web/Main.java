@@ -1,11 +1,13 @@
 package com.saa.web;
 
 import com.saa.web.resource.database.HibernateUtil;
+import com.saa.web.resource.filter.AuthenticationFilter;
 import com.saa.web.resource.filter.HeaderFilter;
 import com.saa.web.resource.filter.HibernateSessionManager;
 import com.saa.web.resource.mapper.*;
-import com.saa.web.router.AuthenticationRouter;
-import com.saa.web.router.StatusRouter;
+import com.saa.web.router.authentication.AuthenticationRouter;
+import com.saa.web.router.authentication.CompanyRouter;
+import com.saa.web.router.authentication.StatusRouter;
 import com.saa.web.utils.TokenJWT;
 
 import javax.ws.rs.ApplicationPath;
@@ -23,6 +25,7 @@ public class Main extends Application {
         hash.add(HeaderFilter.class);
         hash.add(HibernateSessionManager.OpenSession.class);
         hash.add(HibernateSessionManager.CloseSession.class);
+        hash.add(AuthenticationFilter.class);
         // </editor-fold>
 
         // <editor-fold defaultstate="collapsed" desc="Listener">
@@ -50,6 +53,7 @@ public class Main extends Application {
         // <editor-fold defaultstate="collapsed" desc="Routers">
         hash.add(StatusRouter.class);
         hash.add(AuthenticationRouter.class);
+        hash.add(CompanyRouter.class);
         // </editor-fold>
 
         return hash;

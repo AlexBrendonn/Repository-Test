@@ -40,7 +40,7 @@ public class AuthenticationControl {
 
             Optional.ofNullable(user).orElseThrow(() -> new NotAuthorizedException("Usuário ou Senha incorretos", Response.Status.UNAUTHORIZED));
 
-            Company company = Optional.ofNullable(user.getCompany()).orElse(companyDao.list().get(0));
+            Company company = Optional.ofNullable(user.getCompany()).orElse(companyDao.list(user.getOrganization()).get(0));
             user.setCompany(company);
 
             TokenJWT tokenJWT = new TokenJWT();

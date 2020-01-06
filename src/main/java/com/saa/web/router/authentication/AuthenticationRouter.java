@@ -1,4 +1,4 @@
-package com.saa.web.router;
+package com.saa.web.router.authentication;
 
 import com.saa.web.control.authentication.AuthenticationControl;
 import org.json.JSONObject;
