@@ -45,7 +45,6 @@ public class CompanyDao extends MainDao<Company> {
 
         query.where(builder.equal(root.get("id"), object.getId()));
         query.where(builder.equal(root.get("organization"), object.getOrganization().getId()));
-
         session.createQuery(query).executeUpdate();
     }
 }

@@ -20,5 +20,13 @@
         <mapping class="com.saa.web.entity.authentication.Organization"/>
         <mapping class="com.saa.web.entity.authentication.Company"/>
         <mapping class="com.saa.web.entity.authentication.User"/>
+
+        <mapping class="com.saa.web.entity.register.Person"/>
+        <mapping class="com.saa.web.entity.register.PersonGroup"/>
+        <mapping class="com.saa.web.entity.register.PersonCompany"/>
+        <mapping class="com.saa.web.entity.register.Product"/>
+        <mapping class="com.saa.web.entity.register.ProductGroup"/>
+        <mapping class="com.saa.web.entity.register.Unit"/>
+        <mapping class="com.saa.web.entity.register.Vehicle"/>
     </session-factory>
 </hibernate-configuration>

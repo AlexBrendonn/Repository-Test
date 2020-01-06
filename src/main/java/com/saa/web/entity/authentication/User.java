@@ -21,10 +21,10 @@ public class User implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "nickname", length = 30)
+    @Column(name = "nickname", length = 30, nullable = false)
     private String nickname;
 
-    @Column(name = "password", columnDefinition = "text", updatable = false)
+    @Column(name = "password", columnDefinition = "bytea", nullable = false)
     @ColumnTransformer(write = "crypt(?, gen_salt('bf'))")
     private String password;
 
@@ -48,7 +48,6 @@ public class User implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Organization.class)
     @JoinColumn(name = "organization", nullable = false, updatable = false)
-    @NotFound(action = NotFoundAction.IGNORE)
     private Organization organization;
 
     public Long getId() {
