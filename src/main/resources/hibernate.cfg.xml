@@ -37,5 +37,8 @@
 
         <mapping class="com.saa.web.entity.tributary.RestrictionTax"/>
 
+        <mapping class="com.saa.web.entity.system.Setting"/>
+        <mapping class="com.saa.web.entity.system.Email"/>
+
     </session-factory>
 </hibernate-configuration>

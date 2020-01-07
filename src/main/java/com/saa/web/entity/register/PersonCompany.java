@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Table(name = "person_company", schema = "register")
 public class PersonCompany {
     @Id
-    @Column(name = "id")
     private Long id;
 
     @OneToOne

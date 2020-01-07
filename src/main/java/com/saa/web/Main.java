@@ -8,6 +8,7 @@ import com.saa.web.router.authentication.AuthenticationRouter;
 import com.saa.web.router.authentication.CompanyRouter;
 import com.saa.web.router.authentication.StatusRouter;
 import com.saa.web.router.held.*;
+import com.saa.web.router.tributary.RestrictionTaxRouter;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -47,6 +48,7 @@ public class Main extends Application {
         hash.add(CityRouter.class);
         hash.add(StateRouter.class);
         hash.add(CountryRouter.class);
+        hash.add(RestrictionTaxRouter.class);
         // </editor-fold>
 
         return hash;
