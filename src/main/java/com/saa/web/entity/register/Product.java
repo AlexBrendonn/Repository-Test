@@ -26,7 +26,7 @@ public class Product {
     private EProductFiscalType fiscalType;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "group")
+    @JoinColumn(name = "product_group")
     private ProductGroup group;
 
     @ManyToOne(fetch = FetchType.LAZY)

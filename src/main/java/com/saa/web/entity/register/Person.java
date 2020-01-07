@@ -72,7 +72,7 @@ public class Person {
     private PersonCompany company;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "group")
+    @JoinColumn(name = "person_group")
     private PersonGroup group;
 
     @ManyToOne(fetch = FetchType.LAZY)

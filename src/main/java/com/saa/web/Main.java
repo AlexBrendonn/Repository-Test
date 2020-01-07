@@ -1,6 +1,5 @@
 package com.saa.web;
 
-import com.saa.web.resource.database.HibernateUtil;
 import com.saa.web.resource.filter.AuthenticationFilter;
 import com.saa.web.resource.filter.HeaderFilter;
 import com.saa.web.resource.filter.HibernateSessionManager;
@@ -9,7 +8,6 @@ import com.saa.web.router.authentication.AuthenticationRouter;
 import com.saa.web.router.authentication.CompanyRouter;
 import com.saa.web.router.authentication.StatusRouter;
 import com.saa.web.router.held.*;
-import com.saa.web.utils.TokenJWT;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
