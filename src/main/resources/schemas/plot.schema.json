@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Plot",
+  "description": "Schema plot",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "area": {
+      "type": "number"
+    },
+    "form" : {
+      "type": "integer"
+    }
+  },
+  "maxProperties": 4,
+  "propertyNames": {
+    "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+  },
+  "required": [
+    "description",
+    "area",
+    "form"
+  ]
+}

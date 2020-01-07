@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Document",
+  "description": "Schema document",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "number": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "series": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "sub_series": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "emission": {
+      "type": "number"
+    },
+    "movement": {
+      "type": "number"
+    },
+    "sped": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "operation": {
+      "type": "integer"
+    },
+    "recipient": {
+      "type": "integer"
+    },
+    "finance": {
+      "type": "integer"
+    },
+    "issuer": {
+      "type": "integer"
+    },
+    "total_value": {
+      "type": "number"
+    },
+    "total_discount": {
+      "type": "number"
+    },
+    "total_increase": {
+      "type": "number"
+    },
+    "total_freight": {
+      "type": "number"
+    },
+    "note": {
+      "type": "string"
+    }
+  },
+  "maxProperties": 16,
+  "propertyNames": {
+    "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+  },
+  "required": [
+    "emission",
+    "movement",
+    "finance",
+    "issuer",
+    "recipient",
+    "operation",
+    "sped"
+  ]
+}

@@ -12,7 +12,6 @@ import com.saa.web.enumerated.EAuthPlatform;
 import com.saa.web.enumerated.EUserType;
 import com.saa.web.resource.ResponseBodyBuilder;
 import com.saa.web.resource.database.HibernateUtil;
-import com.saa.web.utils.ManagerException;
 import com.saa.web.utils.TokenJWT;
 import org.hibernate.Session;
 import org.json.JSONObject;

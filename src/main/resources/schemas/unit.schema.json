@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Unit",
+  "description": "Schema unit",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "mask": {
+      "type": "string",
+      "maxLength": 10
+    }
+  },
+  "maxProperties": 3,
+  "propertyNames": {
+    "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+  },
+  "required": [
+    "description",
+    "mask"
+  ]
+}

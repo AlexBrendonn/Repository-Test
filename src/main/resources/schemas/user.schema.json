@@ -1,0 +1,128 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "User",
+  "description": "Schema user",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "user index",
+      "type": "integer"
+    },
+    "nickname": {
+      "description": "user nickname",
+      "type": "string"
+    },
+    "password": {
+      "description": "user password",
+      "type": "string",
+      "minLength": 6
+    },
+    "type": {
+      "description": "user type",
+      "type": "string",
+      "enum": [
+        "COMMON",
+        "ADMIN"
+      ]
+    },
+    "name": {
+      "description": "user name",
+      "type": "string"
+    },
+    "email": {
+      "description": "user email",
+      "type": "string"
+    },
+    "phone": {
+      "description": "user phone",
+      "type": "string"
+    },
+    "companies": {
+      "description": "user companies",
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "permission": {
+      "description": "user permissions",
+      "type": "object"
+    }
+  },
+  "definitions": {
+    "companies": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "description": "company index",
+          "type": "integer"
+        },
+        "name": {
+          "description": "company name",
+          "type": "string"
+        },
+        "nickname": {
+          "description": "company nickname",
+          "type": "string"
+        },
+        "ie": {
+          "description": "company ie",
+          "type": "string"
+        },
+        "cpf_cnpj": {
+          "description": "company cfp_cnpj",
+          "type": "string"
+        },
+        "email": {
+          "description": "company email",
+          "type": "string"
+        },
+        "phone": {
+          "description": "company phone",
+          "type": "string"
+        },
+        "address_place": {
+          "description": "company address place",
+          "type": "string"
+        },
+        "address_number": {
+          "description": "company address description",
+          "type": "string"
+        },
+        "address_neighborhood": {
+          "description": "company address neighborhood",
+          "type": "string"
+        },
+        "address_extra": {
+          "description": "company address extra",
+          "type": "string"
+        },
+        "address_cep": {
+          "description": "company address cep",
+          "type": "string"
+        },
+        "city": {
+          "description": "company city",
+          "type": "integer"
+        },
+        "enable": {
+          "description": "company enabled",
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "propertyNames": {
+    "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+  },
+  "required": [
+    "nickname",
+    "type",
+    "name",
+    "companies",
+    "permission"
+  ]
+}

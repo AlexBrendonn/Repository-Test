@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NFE Request",
+  "description": "Schema nfe request",
+  "type": "object",
+  "properties": {
+    "environment": {
+      "type": "string",
+      "enum": [
+        "1",
+        "2"
+      ],
+      "description": "Tipo de Ambiente"
+    },
+    "person": {
+      "type": "integer",
+      "description": "Código da Pessoa emitente"
+    }
+  },
+  "maxProperties": 2,
+  "propertyNames": {
+    "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+  },
+  "required": [
+    "environment",
+    "person"
+  ]
+}

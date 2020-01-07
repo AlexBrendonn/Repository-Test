@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Vehicle",
+  "description": "Schema vehicle",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "plate": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "city": {
+      "type": "integer"
+    },
+    "driver": {
+      "type": "integer"
+    },
+    "load_type": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "bodywork": {
+      "type": "string",
+      "maxLength": 2
+    }
+  },
+  "maxProperties": 7,
+  "propertyNames": {
+    "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+  },
+  "required": [
+    "description",
+    "plate",
+    "city",
+    "driver",
+    "load_type",
+    "bodywork"
+  ]
+}

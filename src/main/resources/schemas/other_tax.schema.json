@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Other Tax",
+  "description": "Schema other tax",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 30
+    },
+    "type": {
+      "type": "string",
+      "maxLength": 20
+    },
+    "durations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/duration"
+      }
+    }
+  },
+  "maxProperties": 4,
+  "propertyNames": {
+    "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+  },
+  "definitions": {
+    "duration": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "date_init": {
+          "type": "integer"
+        },
+        "date_end": {
+          "type": "integer"
+        },
+        "user_upf": {
+          "type": "boolean"
+        },
+        "percent": {
+          "type": "number"
+        }
+      },
+      "maxProperties": 5,
+      "propertyNames": {
+        "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+      },
+      "required": [
+        "date_init",
+        "date_end",
+        "percent"
+      ]
+    }
+  },
+  "required": [
+    "description",
+    "type"
+  ]
+}
