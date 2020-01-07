@@ -1,6 +1,7 @@
 package com.saa.web.entity.tributary;
 
 import com.saa.web.entity.authentication.Organization;
+import org.json.JSONObject;
 
 import javax.persistence.*;
 
@@ -52,5 +53,17 @@ public class RestrictionTax {
 
     public void setOrganization(Organization organization) {
         this.organization = organization;
+    }
+
+    public static RestrictionTax fromJSON(JSONObject json) {
+        RestrictionTax object = new RestrictionTax();
+
+        return object;
+    }
+
+    public JSONObject toJSON() {
+        JSONObject json = new JSONObject();
+
+        return json;
     }
 }

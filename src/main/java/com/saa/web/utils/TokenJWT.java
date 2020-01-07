@@ -30,10 +30,14 @@ public class TokenJWT {
 
     private static EllipticCurveJsonWebKey senderJwk;
 
-    public void createAlgorithm() throws JoseException {
-        EllipticCurveJsonWebKey senderJwk = EcJwkGenerator.generateJwk(EllipticCurves.P521);
-        senderJwk.setKeyId(this.secretKey);
-        this.senderJwk = senderJwk;
+    public void createAlgorithm() throws Exception {
+        try {
+            EllipticCurveJsonWebKey senderJwk = EcJwkGenerator.generateJwk(EllipticCurves.P521);
+            senderJwk.setKeyId(this.secretKey);
+            this.senderJwk = senderJwk;
+        } catch (JoseException e) {
+            throw new Exception(e.getMessage());
+        }
     }
 
     public String create(User user) {

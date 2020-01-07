@@ -29,10 +29,6 @@ public class Main extends Application {
         hash.add(AuthenticationFilter.class);
         // </editor-fold>
 
-        // <editor-fold defaultstate="collapsed" desc="Listener">
-
-        // </editor-fold>
-
         // <editor-fold defaultstate="collapsed" desc="Mappers">
         hash.add(CommonExceptionMapper.class);
         hash.add(ForbiddenMapper.class);
@@ -43,13 +39,6 @@ public class Main extends Application {
         hash.add(NotFoundMapper.class);
         hash.add(PersistenceMapper.class);
         // </editor-fold>
-
-        try {
-            HibernateUtil.connect();
-            new TokenJWT().createAlgorithm();
-        } catch (Exception e) {
-
-        }
 
         // <editor-fold defaultstate="collapsed" desc="Routers">
         hash.add(StatusRouter.class);

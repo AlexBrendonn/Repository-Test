@@ -29,6 +29,13 @@ public class HibernateUtil {
         }
     }
 
+    public static void disconnect(){
+        if (registry != null) {
+            StandardServiceRegistryBuilder.destroy(registry);
+            registry = null;
+        }
+    }
+
     public static SessionFactory getFactory() {
         return sessionFactory;
     }
