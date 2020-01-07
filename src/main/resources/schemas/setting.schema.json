@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Setting",
+  "description": "Schema setting",
+  "type": "object",
+  "properties": {
+    "email_address": {
+      "type": "string"
+    },
+    "email_password": {
+      "type": "string"
+    },
+    "email_title":{
+      "type": "string"
+    },
+    "email_body": {
+      "type": "string"
+    },
+    "email_port": {
+      "type": "string"
+    },
+    "email_smtp": {
+      "type": "string"
+    },
+    "email_add_danfe": {
+      "type": "boolean"
+    },
+    "email_add_xml": {
+      "type": "boolean"
+    },
+    "email_ssl": {
+      "type": "boolean"
+    },
+    "email_tls": {
+      "type": "boolean"
+    }
+  },
+  "maxProperties": 10,
+  "propertyNames": {
+    "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+  },
+  "required": [
+
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Validity State UPF",
+  "description": "Schema validity state upf",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "state": {
+      "type": "integer"
+    },
+    "date_init": {
+      "type": "integer"
+    },
+    "date_end": {
+      "type": "integer"
+    },
+    "percent": {
+      "type": "number"
+    }
+  },
+  "maxProperties": 5,
+  "propertyNames": {
+    "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+  },
+  "required": [
+    "state",
+    "date_init",
+    "date_end",
+    "percent"
+  ]
+}

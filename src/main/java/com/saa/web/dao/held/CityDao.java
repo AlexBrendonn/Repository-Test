@@ -5,7 +5,7 @@ import com.saa.web.entity.held.City;
 
 import java.util.List;
 
-public class CityDao extends MainDao<City> {
+public class CityDao extends MainDao {
 
     public List<City> list() {
         return this.session.createQuery("from City").getResultList();

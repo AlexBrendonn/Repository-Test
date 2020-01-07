@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Restriction Tax",
+  "description": "Schema restriction tax",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "string"
+    },
+    "enable": {
+      "type": "boolean"
+    }
+  },
+  "maxProperties": 3,
+  "propertyNames": {
+    "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+  },
+  "required": [
+    "description"
+  ]
+}

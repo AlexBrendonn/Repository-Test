@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Negative Certificate",
+  "description": "Schema negative certificate",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "person": {
+      "type": "integer"
+    },
+    "expiration": {
+      "type": "integer"
+    },
+    "cnd": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "authentication_code": {
+      "type": "string",
+      "maxLength": 16
+    }
+  },
+  "maxProperties": 5,
+  "propertyNames": {
+    "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+  },
+  "required": [
+    "authentication_code",
+    "cnd",
+    "expiration",
+    "person"
+  ]
+}

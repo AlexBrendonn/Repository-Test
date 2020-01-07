@@ -5,7 +5,7 @@ import com.saa.web.entity.held.Cfop;
 
 import java.util.List;
 
-public class CfopDao extends MainDao<Cfop> {
+public class CfopDao extends MainDao {
 
     public List<Cfop> list() {
         return this.session.createQuery("from Cfop").getResultList();

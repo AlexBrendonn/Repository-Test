@@ -27,5 +27,15 @@
         <mapping class="com.saa.web.entity.held.Cst"/>
         <mapping class="com.saa.web.entity.held.Cfop"/>
 
+        <mapping class="com.saa.web.entity.register.Person"/>
+        <mapping class="com.saa.web.entity.register.PersonGroup"/>
+        <mapping class="com.saa.web.entity.register.PersonCompany"/>
+        <mapping class="com.saa.web.entity.register.Product"/>
+        <mapping class="com.saa.web.entity.register.ProductGroup"/>
+        <mapping class="com.saa.web.entity.register.Unit"/>
+        <mapping class="com.saa.web.entity.register.Vehicle"/>
+
+        <mapping class="com.saa.web.entity.tributary.RestrictionTax"/>
+
     </session-factory>
 </hibernate-configuration>

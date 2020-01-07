@@ -5,7 +5,7 @@ import com.saa.web.entity.held.State;
 
 import java.util.List;
 
-public class StateDao extends MainDao<State> {
+public class StateDao extends MainDao {
 
     public List<State> list() {
         return this.session.createQuery("from State").getResultList();

@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Product",
+  "description": "Schema product",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "reference": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "fiscal_type": {
+      "type": "string"
+    },
+    "group": {
+      "type": "integer"
+    },
+    "unit": {
+      "type": "integer"
+    },
+    "ncm": {
+      "type": "string",
+      "maxLength": 8
+    },
+    "note": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "enable": {
+      "type": "boolean"
+    },
+    "types": {
+      "type": "object"
+    }
+  },
+  "maxProperties": 9,
+  "propertyNames": {
+    "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+  },
+  "required": [
+    "description",
+    "fiscal_type",
+    "group",
+    "unit"
+  ]
+}

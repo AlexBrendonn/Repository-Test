@@ -1,0 +1,112 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Operation Rule",
+  "description": "Schema operation rule",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "estimated_tax": {
+      "type": "number"
+    },
+    "search_type": {
+      "type": "string"
+    },
+    "person": {
+      "type": "integer"
+    },
+    "product": {
+      "type": "integer"
+    },
+    "product_group": {
+      "type": "integer"
+    },
+    "state_costumer": {
+      "type": "string"
+    },
+    "state_company": {
+      "type": "string"
+    },
+    "restriction_tax": {
+      "type": "integer"
+    },
+    "cfop_inside_state": {
+      "type": "string"
+    },
+    "cfop_outside_state": {
+      "type": "string"
+    },
+    "cfop_abroad": {
+      "type": "string"
+    },
+    "cst": {
+      "type": "string"
+    },
+    "csosn": {
+      "type": "string"
+    },
+    "base_value": {
+      "type": "number"
+    },
+    "rate_value": {
+      "type": "number"
+    },
+    "icms_type": {
+      "type": "string"
+    },
+    "base_value_modality": {
+      "type": "string"
+    },
+    "base_value_type": {
+      "type": "string"
+    },
+    "mva_base_value": {
+      "type": "number"
+    },
+    "mva_rate_value": {
+      "type": "number"
+    },
+    "pis_cst": {
+      "type": "integer"
+    },
+    "pis_base_value": {
+      "type": "number"
+    },
+    "pis_rate_value": {
+      "type": "number"
+    },
+    "cofins_cst": {
+      "type": "integer"
+    },
+    "cofins_base_value": {
+      "type": "number"
+    },
+    "cofins_rate_value": {
+      "type": "number"
+    },
+    "note_body": {
+      "type": "string"
+    },
+    "note_extra": {
+      "type": "string"
+    },
+    "operation_type": {
+      "type": "integer"
+    }
+  },
+  "maxProperties": 30,
+  "propertyNames": {
+    "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+  },
+  "required": [
+    "description",
+    "search_type",
+    "estimated_tax",
+    "operation_type"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Company",
+  "description": "Schema company",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "nickname": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "address_place": {
+      "type": "string"
+    },
+    "address_number": {
+      "type": "string"
+    },
+    "address_neighborhood": {
+      "type": "string"
+    },
+    "address_extra": {
+      "type": "string"
+    },
+    "address_cep": {
+      "type": "string"
+    },
+    "city": {
+      "description": "company city",
+      "type": "integer"
+    },
+    "enable": {
+      "description": "company enabled",
+      "type": "boolean"
+    }
+  },
+  "maxProperties": 14,
+  "propertyNames": {
+    "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+  },
+  "required": [
+    "name",
+    "nickname",
+    "city"
+  ]
+}

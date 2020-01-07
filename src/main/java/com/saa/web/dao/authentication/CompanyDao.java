@@ -7,7 +7,7 @@ import com.saa.web.entity.authentication.Organization;
 import javax.persistence.criteria.*;
 import java.util.List;
 
-public class CompanyDao extends MainDao<Company> {
+public class CompanyDao extends MainDao {
     public void insert(Company object) {
         session.persist(object);
     }
@@ -45,7 +45,6 @@ public class CompanyDao extends MainDao<Company> {
 
         query.where(builder.equal(root.get("id"), object.getId()));
         query.where(builder.equal(root.get("organization"), object.getOrganization().getId()));
-
         session.createQuery(query).executeUpdate();
     }
 }

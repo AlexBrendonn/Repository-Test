@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cycle",
+  "description": "Schema cycle",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "mask": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "harvest": {
+      "type": "integer"
+    },
+    "culture": {
+      "type": "integer"
+    },
+    "init": {
+      "type": "string"
+    },
+    "end": {
+      "type": "string"
+    },
+    "value": {
+      "type": "number"
+    }
+  },
+  "maxProperties": 7,
+  "propertyNames": {
+    "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+  },
+  "required": [
+    "description",
+    "mask",
+    "harvest",
+    "culture",
+    "init",
+    "end",
+    "value"
+  ]
+}

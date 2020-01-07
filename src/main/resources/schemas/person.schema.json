@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Person",
+  "description": "Schema person",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "nickname": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "cpfCnpj": {
+      "type": "string",
+      "minLength": 11,
+      "maxLength": 14
+    },
+    "ie": {
+      "type": "string",
+      "maxLength": 14
+    },
+    "email": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "phone": {
+      "type": "string",
+      "maxLength": 14
+    },
+    "address": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "neighborhood": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "number": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "extra": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "cep": {
+      "type": "string",
+      "maxLength": 8
+    },
+    "profiles": {
+      "type": "object"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "note": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "enable": {
+      "type": "boolean"
+    },
+    "restriction_tax": {
+      "type": "integer"
+    },
+    "group": {
+      "type": "number"
+    },
+    "company": {
+      "type": "number"
+    },
+    "accountantDocument": {
+      "type": "string"
+    },
+    "accountantCRC": {
+      "type": "string"
+    },
+    "certPassword": {
+      "type": "string"
+    },
+    "certFile": {
+      "type": "string"
+    },
+    "crt": {
+      "type": "string",
+      "maxLength": 1
+    }
+  },
+  "maxProperties": 24,
+  "propertyNames": {
+    "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+  },
+  "required": [
+    "name",
+    "nickname",
+    "cpfCnpj",
+    "ie",
+    "address",
+    "neighborhood",
+    "cep",
+    "city",
+    "state",
+    "phone",
+    "profiles"
+  ]
+}

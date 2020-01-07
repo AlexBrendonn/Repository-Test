@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Document Item",
+  "description": "Schema document",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "amount": {
+      "type": "number"
+    },
+    "product": {
+      "type": "integer"
+    },
+    "has_operation": {
+      "type": "integer"
+    },
+    "unit": {
+      "type": "integer"
+    },
+    "document": {
+      "type": "integer"
+    },
+    "value": {
+      "type": "number"
+    },
+    "discount": {
+      "type": "number"
+    },
+    "increase": {
+      "type": "number"
+    },
+    "freight": {
+      "type": "number"
+    }
+  },
+  "maxProperties": 10,
+  "propertyNames": {
+    "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+  },
+  "required": [
+    "product",
+    "unit",
+    "document"
+  ]
+}

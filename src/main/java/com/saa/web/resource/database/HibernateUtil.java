@@ -15,6 +15,7 @@ public class HibernateUtil {
 
     public static void connect() {
         try {
+            if (registry != null) return;
             registry = new StandardServiceRegistryBuilder().configure().build();
             MetadataSources sources = new MetadataSources(registry);
             Metadata metadata = sources.getMetadataBuilder().build();
@@ -23,6 +24,7 @@ public class HibernateUtil {
             e.printStackTrace();
             if (registry != null) {
                 StandardServiceRegistryBuilder.destroy(registry);
+                registry = null;
             }
         }
     }
