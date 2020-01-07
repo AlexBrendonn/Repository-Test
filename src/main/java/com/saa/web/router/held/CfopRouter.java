@@ -1,6 +1,6 @@
-package com.saa.web.router.authentication;
+package com.saa.web.router.held;
 
-import com.saa.web.control.authentication.CompanyControl;
+import com.saa.web.control.held.CfopControl;
 import com.saa.web.entity.authentication.AuthenticationToken;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,21 +12,19 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/company")
-public class CompanyRouter {
+@Path("/cfop")
+public class CfopRouter {
     @Context
     HttpServletRequest webRequest;
-    CompanyControl control;
+    CfopControl control;
 
-    public CompanyRouter() {
-
-    }
+    public CfopRouter(){}
 
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response get() {
-        this.control = new CompanyControl((AuthenticationToken) webRequest.getSession().getAttribute("authentication"));
+        this.control = new CfopControl((AuthenticationToken) webRequest.getSession().getAttribute("authentication"));
         return control.get();
     }
 }

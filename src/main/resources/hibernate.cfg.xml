@@ -20,5 +20,12 @@
         <mapping class="com.saa.web.entity.authentication.Organization"/>
         <mapping class="com.saa.web.entity.authentication.Company"/>
         <mapping class="com.saa.web.entity.authentication.User"/>
+
+        <mapping class="com.saa.web.entity.held.City"/>
+        <mapping class="com.saa.web.entity.held.State"/>
+        <mapping class="com.saa.web.entity.held.Country"/>
+        <mapping class="com.saa.web.entity.held.Cst"/>
+        <mapping class="com.saa.web.entity.held.Cfop"/>
+
     </session-factory>
 </hibernate-configuration>
