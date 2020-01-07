@@ -8,7 +8,7 @@ import com.saa.web.entity.authentication.User;
 import javax.persistence.criteria.*;
 import java.util.List;
 
-public class UserDao extends MainDao<User> {
+public class UserDao extends MainDao{
     public void insert(User object) {
         session.persist(object);
     }

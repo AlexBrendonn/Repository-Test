@@ -1,11 +1,9 @@
 package com.saa.web.dao.authentication;
 
 import com.saa.web.entity.authentication.AuthenticationToken;
-import com.saa.web.entity.authentication.Organization;
 import com.saa.web.entity.authentication.User;
 import com.saa.web.enumerated.EAuthPlatform;
 import com.saa.web.resource.database.HibernateUtil;
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.hibernate.type.LongType;

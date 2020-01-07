@@ -4,6 +4,7 @@ import com.saa.web.entity.authentication.Organization;
 import com.saa.web.entity.held.City;
 import com.saa.web.entity.tributary.RestrictionTax;
 import com.saa.web.enumerated.EPersonProfile;
+import org.json.JSONObject;
 
 import javax.persistence.*;
 import java.util.List;
@@ -229,4 +230,18 @@ public class Person {
     public void setOrganization(Organization organization) {
         this.organization = organization;
     }
+
+    public static Person fromJSON(JSONObject json) {
+        Person object = new Person();
+
+
+        return object;
+    }
+
+    public JSONObject toJSON() {
+        JSONObject json = new JSONObject();
+
+        return json;
+    }
+
 }
