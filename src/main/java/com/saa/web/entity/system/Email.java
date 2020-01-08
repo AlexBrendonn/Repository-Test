@@ -27,16 +27,16 @@ public class Email {
     @Column(name = "port", length = 10)
     private String port;
 
-    @Column(name = "ssl", columnDefinition = "boolean")
+    @Column(name = "ssl")
     private Boolean ssl;
 
-    @Column(name = "tls", columnDefinition = "boolean")
+    @Column(name = "tls")
     private Boolean tls;
 
-    @Column(name = "xml", columnDefinition = "boolean")
+    @Column(name = "xml")
     private Boolean xml;
 
-    @Column(name = "danfe", columnDefinition = "boolean")
+    @Column(name = "danfe")
     private Boolean danfe;
 
     @Column(name = "title", length = 50)

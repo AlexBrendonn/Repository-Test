@@ -1,24 +1,22 @@
 package com.saa.web.entity.tributary;
 
 import com.saa.web.entity.authentication.Organization;
-import org.hibernate.annotations.ColumnDefault;
-import org.json.JSONObject;
 
 import javax.persistence.*;
 
-@Entity(name = "RestrictionTax")
-@Table(name = "restriction_tax", schema = "tributary")
-public class RestrictionTax {
+@Entity(name = "Currency")
+@Table(name = "currency",schema = "tributary")
+public class Currency {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "description", length = 60, nullable = false)
+    @Column(name = "description",nullable = false)
     private String description;
 
-    @Column(name = "enable")
-    private Boolean enable;
+    @Column(name = "mask", nullable = false)
+    private String mask;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "organization", nullable = false, updatable = false)
@@ -40,12 +38,12 @@ public class RestrictionTax {
         this.description = description;
     }
 
-    public Boolean getEnable() {
-        return enable;
+    public String getMask() {
+        return mask;
     }
 
-    public void setEnable(Boolean enable) {
-        this.enable = enable;
+    public void setMask(String mask) {
+        this.mask = mask;
     }
 
     public Organization getOrganization() {
@@ -54,17 +52,5 @@ public class RestrictionTax {
 
     public void setOrganization(Organization organization) {
         this.organization = organization;
-    }
-
-    public static RestrictionTax fromJSON(JSONObject json) {
-        RestrictionTax object = new RestrictionTax();
-
-        return object;
-    }
-
-    public JSONObject toJSON() {
-        JSONObject json = new JSONObject();
-
-        return json;
     }
 }
