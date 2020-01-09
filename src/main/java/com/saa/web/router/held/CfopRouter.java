@@ -18,8 +18,6 @@ public class CfopRouter {
     HttpServletRequest webRequest;
     CfopControl control;
 
-    public CfopRouter(){}
-
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)

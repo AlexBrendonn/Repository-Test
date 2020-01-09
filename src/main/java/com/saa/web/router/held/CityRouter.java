@@ -18,8 +18,6 @@ public class CityRouter {
     HttpServletRequest webRequest;
     CityControl control;
 
-    public CityRouter(){}
-
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)

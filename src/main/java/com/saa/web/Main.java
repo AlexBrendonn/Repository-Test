@@ -11,6 +11,7 @@ import com.saa.web.router.authentication.StatusRouter;
 import com.saa.web.router.held.*;
 import com.saa.web.router.register.*;
 import com.saa.web.router.tillage.*;
+import com.saa.web.router.tributary.RestrictionTaxRouter;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -72,6 +73,7 @@ public class Main extends Application {
         hash.add(UnitRouter.class);
         hash.add(VehicleRouter.class);
 
+        hash.add(RestrictionTaxRouter.class);
         // </editor-fold>
 
         return hash;

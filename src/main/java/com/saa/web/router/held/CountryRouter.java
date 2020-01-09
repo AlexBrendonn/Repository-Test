@@ -18,8 +18,6 @@ public class CountryRouter {
     HttpServletRequest webRequest;
     CountryControl control;
 
-    public CountryRouter(){}
-
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)

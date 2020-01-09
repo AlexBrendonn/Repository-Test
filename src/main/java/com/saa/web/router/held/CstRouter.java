@@ -18,8 +18,6 @@ public class CstRouter {
     HttpServletRequest webRequest;
     CstControl control;
 
-    public CstRouter(){}
-
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)

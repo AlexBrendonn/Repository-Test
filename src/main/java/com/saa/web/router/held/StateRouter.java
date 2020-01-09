@@ -18,8 +18,6 @@ public class StateRouter {
     HttpServletRequest webRequest;
     StateControl control;
 
-    public StateRouter(){}
-
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)

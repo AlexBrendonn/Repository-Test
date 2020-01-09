@@ -14,7 +14,6 @@ import java.util.Base64;
 @Table(name = "person_company", schema = "register")
 public class PersonCompany {
     @Id
-    @Column(name = "id")
     private Long id;
 
     @OneToOne
