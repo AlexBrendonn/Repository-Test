@@ -16,11 +16,12 @@ import java.util.List;
 import java.util.Optional;
 
 public class PersonControl extends MainControl {
+
     public PersonControl(AuthenticationToken token) {
         super(token);
     }
 
-    public Response save(JSONObject body) throws Exception {
+    public Response save(JSONObject body){
         ResponseBodyBuilder response = new ResponseBodyBuilder(false);
         Session session = HibernateUtil.getSession();
 

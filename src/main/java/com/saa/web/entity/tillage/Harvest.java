@@ -1,6 +1,7 @@
 package com.saa.web.entity.tillage;
 
 import com.saa.web.entity.authentication.Organization;
+import com.saa.web.utils.Converter;
 import org.json.JSONObject;
 
 import javax.persistence.*;
@@ -88,6 +89,19 @@ public class Harvest {
 
     public void setOrganization(Organization organization) {
         this.organization = organization;
+    }
+
+    public static Harvest fromJSON(JSONObject json) {
+        Harvest response = new Harvest();
+
+        response.setId(json.optLong("id", 0));
+        response.description = json.getString("description");
+        response.mask = json.getString("mask");
+        response.init = Converter.DateUtils.fromString(json.getString("init"));
+        response.end = Converter.DateUtils.fromString(json.getString("end"));
+        response.activated = json.getBoolean("activated");
+
+        return response;
     }
 
     public JSONObject toJSON() {

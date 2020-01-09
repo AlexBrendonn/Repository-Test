@@ -36,9 +36,13 @@ public enum ESchema {
     PLOT_TYPE("/schemas/plot_type.schema.json"),
     SERVICE_TYPE("/schemas/service_type.schema.json"),
     HARVEST("/schemas/harvest.schema.json"),
+    HARVEST_CONFIGURATION("/schemas/harvest_configuration.schema.json"),
     CONTRACT_TYPE("/schemas/contract_type.schema.json"),
     CYCLE("/schemas/cycle.schema.json"),
-    PLOT("/schemas/plot.schema.json");
+    PLOT("/schemas/plot.schema.json"),
+    DISCOUNT_TYPE("/schemas/discount_type.schema.json"),
+    EXCHANGE_CONFIGURATION("/schemas/exchange_configuration.schema.json"),
+    WORK_ON_VEHICLE("/schemas/work_on_vehicle.schema.json");
 
     private final String schemaFile;
 

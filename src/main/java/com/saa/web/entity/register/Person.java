@@ -239,7 +239,7 @@ public class Person {
         this.organization = organization;
     }
 
-    public static Person fromJSON(JSONObject json) throws Exception {
+    public static Person fromJSON(JSONObject json){
         Person person = new Person();
 
         person.id = json.optLong("id", 0);
