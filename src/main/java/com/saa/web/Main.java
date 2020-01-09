@@ -49,6 +49,7 @@ public class Main extends Application {
 
         hash.add(CstRouter.class);
         hash.add(CfopRouter.class);
+        hash.add(SpedRouter.class);
         hash.add(CityRouter.class);
         hash.add(StateRouter.class);
         hash.add(CountryRouter.class);
