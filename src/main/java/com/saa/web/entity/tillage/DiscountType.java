@@ -1,23 +1,26 @@
-package com.saa.web.entity.register;
+package com.saa.web.entity.tillage;
 
 import com.saa.web.entity.authentication.Organization;
+import com.saa.web.enumerated.EDiscountTypeField;
 import org.json.JSONObject;
 
 import javax.persistence.*;
 
-@Entity(name = "Unit")
-@Table(name = "unit", schema = "register")
-public class Unit {
+@Entity(name = "DiscountType")
+@Table(name = "discount_type", schema = "tillage")
+public class DiscountType {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "description", length = 60)
+    @Column(name = "description",length = 60, nullable = false)
     private String description;
 
-    @Column(name = "mask", length = 10, nullable = false)
-    private String mask;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "field", columnDefinition = "Text", nullable = false)
+    private EDiscountTypeField field;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "organization", nullable = false, updatable = false)
@@ -39,12 +42,12 @@ public class Unit {
         this.description = description;
     }
 
-    public String getMask() {
-        return mask;
+    public EDiscountTypeField getField() {
+        return field;
     }
 
-    public void setMask(String mask) {
-        this.mask = mask;
+    public void setField(EDiscountTypeField field) {
+        this.field = field;
     }
 
     public Organization getOrganization() {
@@ -55,14 +58,14 @@ public class Unit {
         this.organization = organization;
     }
 
-    public static Unit fromJSON(JSONObject json) {
-        Unit unit = new Unit();
+    public static DiscountType fromJSON(JSONObject json) {
+        DiscountType response = new DiscountType();
 
-        unit.id = json.optLong("id", 0);
-        unit.description = json.getString("description");
-        unit.mask = json.getString("mask");
+        response.setId(json.optLong("id", 0));
+        response.description = json.getString("description");
+        response.field = EDiscountTypeField.valueOf(json.getString("field"));
 
-        return unit;
+        return response;
     }
 
     public JSONObject toJSON() {
@@ -70,7 +73,7 @@ public class Unit {
 
         object.put("id", this.id);
         object.put("description", this.description);
-        object.put("mask", this.mask);
+        object.put("field", this.field.name());
 
         return object;
     }

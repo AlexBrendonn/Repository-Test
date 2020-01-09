@@ -1,6 +1,7 @@
 package com.saa.web.entity.register;
 
 import com.saa.web.entity.authentication.Organization;
+import org.json.JSONObject;
 
 import javax.persistence.*;
 
@@ -41,5 +42,23 @@ public class PersonGroup {
 
     public void setOrganization(Organization organization) {
         this.organization = organization;
+    }
+
+    public static PersonGroup fromJSON(JSONObject object){
+        PersonGroup personGroup = new PersonGroup();
+
+        personGroup.id = object.optLong("id",0);
+        personGroup.description = object.getString("description");
+
+        return personGroup;
+    }
+
+    public JSONObject toJSON(){
+        JSONObject object = new JSONObject();
+
+        object.put("id",this.id);
+        object.put("description",this.description);
+
+        return object;
     }
 }

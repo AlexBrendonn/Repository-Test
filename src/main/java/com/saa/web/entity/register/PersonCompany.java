@@ -3,9 +3,12 @@ package com.saa.web.entity.register;
 import com.saa.web.entity.authentication.Company;
 import com.saa.web.entity.authentication.Organization;
 import com.saa.web.enumerated.EPersonCRT;
+import com.saa.web.utils.Replaces;
 import org.hibernate.annotations.ColumnTransformer;
+import org.json.JSONObject;
 
 import javax.persistence.*;
+import java.util.Base64;
 
 @Entity(name = "PersonCompany")
 @Table(name = "person_company", schema = "register")
@@ -113,5 +116,44 @@ public class PersonCompany {
 
     public void setOrganization(Organization organization) {
         this.organization = organization;
+    }
+
+    public static PersonCompany fromJSON(JSONObject json) throws Exception {
+        PersonCompany personCompany = new PersonCompany();
+
+        personCompany.id = json.optLong("id", 0);
+        personCompany.accountantCrc = json.optString("accountantCRC", null);
+        personCompany.accountantDocument = json.optString("accountantDocument", null);
+        personCompany.certPassword = json.optString("certPassword", null);
+        personCompany.crt = EPersonCRT.get(json.optString("crt", "1"));
+
+        Company company = new Company();
+        company.setId(json.getLong("company"));
+        personCompany.company = company;
+
+        if (json.has("certFile")) {
+            Replaces rep64 = new Replaces();
+            String cert = rep64.replaceData64(json.getString("certFile"));
+            personCompany.certFile = Base64.getDecoder().decode(cert);
+        }
+
+        return personCompany;
+    }
+
+    public JSONObject toJSON() {
+        JSONObject json = new JSONObject();
+
+        json.put("id", this.id);
+        json.put("accountantCRC", this.accountantCrc);
+        json.put("accountantDocument", this.accountantDocument);
+        json.put("company", this.company.getId());
+        json.put("certPassword", this.certPassword);
+        json.put("crt", this.crt.getCode());
+        if (this.certFile != null) {
+            String buildBase64 = "data:application/x-pkcs12;base64,";
+            json.put("certFile", buildBase64 + Base64.getEncoder().encodeToString(this.certFile));
+        }
+
+        return json;
     }
 }

@@ -1,23 +1,21 @@
-package com.saa.web.entity.register;
+package com.saa.web.entity.tillage;
 
 import com.saa.web.entity.authentication.Organization;
 import org.json.JSONObject;
 
 import javax.persistence.*;
 
-@Entity(name = "Unit")
-@Table(name = "unit", schema = "register")
-public class Unit {
+@Entity(name = "ServiceType")
+@Table(name = "service_type", schema = "tillage")
+public class ServiceType {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "description", length = 60)
+    @Column(name = "description",length = 60, nullable = false)
     private String description;
-
-    @Column(name = "mask", length = 10, nullable = false)
-    private String mask;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "organization", nullable = false, updatable = false)
@@ -39,14 +37,6 @@ public class Unit {
         this.description = description;
     }
 
-    public String getMask() {
-        return mask;
-    }
-
-    public void setMask(String mask) {
-        this.mask = mask;
-    }
-
     public Organization getOrganization() {
         return organization;
     }
@@ -55,14 +45,13 @@ public class Unit {
         this.organization = organization;
     }
 
-    public static Unit fromJSON(JSONObject json) {
-        Unit unit = new Unit();
+    public static ServiceType fromJSON(JSONObject json) {
+        ServiceType response = new ServiceType();
 
-        unit.id = json.optLong("id", 0);
-        unit.description = json.getString("description");
-        unit.mask = json.getString("mask");
+        response.setId(json.optLong("id", 0));
+        response.description = json.getString("description");
 
-        return unit;
+        return response;
     }
 
     public JSONObject toJSON() {
@@ -70,7 +59,6 @@ public class Unit {
 
         object.put("id", this.id);
         object.put("description", this.description);
-        object.put("mask", this.mask);
 
         return object;
     }

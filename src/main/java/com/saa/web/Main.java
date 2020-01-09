@@ -1,5 +1,6 @@
 package com.saa.web;
 
+import com.saa.web.entity.tillage.ApplianceFieldType;
 import com.saa.web.resource.filter.AuthenticationFilter;
 import com.saa.web.resource.filter.HeaderFilter;
 import com.saa.web.resource.filter.HibernateSessionManager;
@@ -8,6 +9,8 @@ import com.saa.web.router.authentication.AuthenticationRouter;
 import com.saa.web.router.authentication.CompanyRouter;
 import com.saa.web.router.authentication.StatusRouter;
 import com.saa.web.router.held.*;
+import com.saa.web.router.register.*;
+import com.saa.web.router.tillage.*;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -42,11 +45,33 @@ public class Main extends Application {
         hash.add(StatusRouter.class);
         hash.add(AuthenticationRouter.class);
         hash.add(CompanyRouter.class);
+
         hash.add(CstRouter.class);
         hash.add(CfopRouter.class);
         hash.add(CityRouter.class);
         hash.add(StateRouter.class);
         hash.add(CountryRouter.class);
+
+        hash.add(ApplianceFieldTypeRouter.class);
+        hash.add(ApplianceVehicleTypeRouter.class);
+        hash.add(ContractTypeRouter.class);
+        hash.add(CycleRouter.class);
+        hash.add(DiscountTypeRouter.class);
+        hash.add(ExchangeConfigurationRouter.class);
+        hash.add(HarvestConfigurationRouter.class);
+        hash.add(HarvestRouter.class);
+        hash.add(PlotRouter.class);
+        hash.add(PlotTypeRouter.class);
+        hash.add(ServiceTypeRouter.class);
+        hash.add(WorkOnVehicleRouter.class);
+
+        hash.add(PersonGroupRouter.class);
+        hash.add(PersonRouter.class);
+        hash.add(ProductRouter.class);
+        hash.add(ProductGroupRouter.class);
+        hash.add(UnitRouter.class);
+        hash.add(VehicleRouter.class);
+
         // </editor-fold>
 
         return hash;

@@ -20,7 +20,7 @@ public class PersonControl extends MainControl {
         super(token);
     }
 
-    public Response save(JSONObject body) {
+    public Response save(JSONObject body) throws Exception {
         ResponseBodyBuilder response = new ResponseBodyBuilder(false);
         Session session = HibernateUtil.getSession();
 

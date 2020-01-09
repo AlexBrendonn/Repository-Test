@@ -3,8 +3,11 @@ package com.saa.web.entity.register;
 import com.saa.web.entity.authentication.Organization;
 import com.saa.web.enumerated.EProductFiscalType;
 import com.saa.web.enumerated.EProductType;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity(name = "Product")
@@ -38,6 +41,9 @@ public class Product {
 
     @Column(name = "note", columnDefinition = "text")
     private String note;
+
+    @Column(name = "enable")
+    private Boolean enable;
 
     @ElementCollection(targetClass = EProductType.class)
     @Enumerated(EnumType.STRING)
@@ -113,6 +119,14 @@ public class Product {
         this.note = note;
     }
 
+    public Boolean getEnable() {
+        return enable;
+    }
+
+    public void setEnable(Boolean enable) {
+        this.enable = enable;
+    }
+
     public List<EProductType> getTypes() {
         return types;
     }
@@ -127,5 +141,54 @@ public class Product {
 
     public void setOrganization(Organization organization) {
         this.organization = organization;
+    }
+
+    public static Product fromJSON(JSONObject object) {
+        Product product = new Product();
+
+        product.id = object.optLong("id", 0);
+        product.description = object.getString("description");
+        product.reference = object.optString("reference", null);
+        product.fiscalType = EProductFiscalType.valueOf(object.getString("fiscal_type"));
+        product.ncm = object.optString("ncm", null);
+        product.note = object.optString("note", null);
+        product.enable = object.optBoolean("enable", true);
+
+        ProductGroup group = new ProductGroup();
+        Unit unit = new Unit();
+
+        List<EProductType> types = new ArrayList<>();
+        JSONArray array = object.getJSONArray("profiles");
+
+        for (int i = 0; i < array.length(); i++) {
+            EProductType type = EProductType.valueOf(array.getString(i));
+            types.add(type);
+        }
+
+        group.setId(object.getLong("group"));
+        unit.setId(object.getLong("unit"));
+
+        product.types = types;
+        product.group = group;
+        product.unit = unit;
+
+        return product;
+    }
+
+    public JSONObject toJSON() {
+        JSONObject object = new JSONObject();
+
+        object.put("id", this.id);
+        object.put("description", this.description);
+        object.put("reference", this.reference);
+        object.put("fiscal_type", this.fiscalType.getCode());
+        object.put("group", this.group.getId());
+        object.put("unit", this.unit.getId());
+        object.put("ncm", this.ncm);
+        object.put("note", this.note);
+        object.put("enable", this.enable);
+        object.put("types", new JSONObject(this.types));
+
+        return object;
     }
 }
