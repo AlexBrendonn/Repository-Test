@@ -44,11 +44,11 @@ public class ProductGroup {
         this.organization = organization;
     }
 
-    public static ProductGroup fromJSON(JSONObject object) {
+    public static ProductGroup fromJSON(JSONObject json) {
         ProductGroup productGroup = new ProductGroup();
 
-        productGroup.id = object.optLong("id", 0);
-        productGroup.description = object.getString("description");
+        productGroup.id = json.optLong("id", 0);
+        productGroup.description = json.getString("description");
 
         return productGroup;
     }

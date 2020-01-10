@@ -143,30 +143,30 @@ public class Product {
         this.organization = organization;
     }
 
-    public static Product fromJSON(JSONObject object) {
+    public static Product fromJSON(JSONObject json) {
         Product product = new Product();
 
-        product.id = object.optLong("id", 0);
-        product.description = object.getString("description");
-        product.reference = object.optString("reference", null);
-        product.fiscalType = EProductFiscalType.valueOf(object.getString("fiscal_type"));
-        product.ncm = object.optString("ncm", null);
-        product.note = object.optString("note", null);
-        product.enable = object.optBoolean("enable", true);
+        product.id = json.optLong("id", 0);
+        product.description = json.getString("description");
+        product.reference = json.optString("reference", null);
+        product.fiscalType = EProductFiscalType.valueOf(json.getString("fiscal_type"));
+        product.ncm = json.optString("ncm", null);
+        product.note = json.optString("note", null);
+        product.enable = json.optBoolean("enable", true);
 
         ProductGroup group = new ProductGroup();
         Unit unit = new Unit();
 
         List<EProductType> types = new ArrayList<>();
-        JSONArray array = object.getJSONArray("profiles");
+        JSONArray array = json.getJSONArray("profiles");
 
         for (int i = 0; i < array.length(); i++) {
             EProductType type = EProductType.valueOf(array.getString(i));
             types.add(type);
         }
 
-        group.setId(object.getLong("group"));
-        unit.setId(object.getLong("unit"));
+        group.setId(json.getLong("group"));
+        unit.setId(json.getLong("unit"));
 
         product.types = types;
         product.group = group;

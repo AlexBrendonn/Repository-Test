@@ -44,11 +44,11 @@ public class PersonGroup {
         this.organization = organization;
     }
 
-    public static PersonGroup fromJSON(JSONObject object){
+    public static PersonGroup fromJSON(JSONObject json){
         PersonGroup personGroup = new PersonGroup();
 
-        personGroup.id = object.optLong("id",0);
-        personGroup.description = object.getString("description");
+        personGroup.id = json.optLong("id",0);
+        personGroup.description = json.getString("description");
 
         return personGroup;
     }

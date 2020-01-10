@@ -114,18 +114,18 @@ public class Vehicle {
         this.organization = organization;
     }
 
-    public static Vehicle fromJSON(JSONObject object) {
+    public static Vehicle fromJSON(JSONObject json) {
         Vehicle vehicle = new Vehicle();
 
-        vehicle.id = object.optLong("id", 0);
-        vehicle.description = object.getString("description");
-        vehicle.plate = object.getString("plate");
+        vehicle.id = json.optLong("id", 0);
+        vehicle.description = json.getString("description");
+        vehicle.plate = json.getString("plate");
 
         City city = new City();
         Person person = new Person();
 
         List<EVehicleBodywork> bodyworks = new ArrayList<>();
-        JSONArray arrayBodywork = object.getJSONArray("bodywork");
+        JSONArray arrayBodywork = json.getJSONArray("bodywork");
 
         for (int i = 0; i < arrayBodywork.length(); i++) {
             EVehicleBodywork bodywork = EVehicleBodywork.valueOf(arrayBodywork.getString(i));
@@ -133,15 +133,15 @@ public class Vehicle {
         }
 
         List<EVehicleLoadType> loadTypes = new ArrayList<>();
-        JSONArray arrayLoadType = object.getJSONArray("loadType");
+        JSONArray arrayLoadType = json.getJSONArray("loadType");
 
         for (int i = 0; i < arrayLoadType.length(); i++) {
             EVehicleLoadType loadType = EVehicleLoadType.valueOf(arrayLoadType.getString(i));
             loadTypes.add(loadType);
         }
 
-        city.setCode(object.getString("city"));
-        person.setId(object.getLong("driver"));
+        city.setCode(json.getString("city"));
+        person.setId(json.getLong("driver"));
 
         vehicle.bodywork = bodyworks;
         vehicle.loadType = loadTypes;
