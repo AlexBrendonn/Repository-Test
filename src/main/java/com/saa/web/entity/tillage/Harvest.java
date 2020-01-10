@@ -22,11 +22,11 @@ public class Harvest {
     @Column(name = "mask", length = 60, nullable = false)
     private String mask;
 
-    @Column(name = "init", nullable = false)
-    private ZonedDateTime init = ZonedDateTime.now();
+    @Column(name = "init_date", nullable = false)
+    private ZonedDateTime init_date = ZonedDateTime.now();
 
-    @Column(name = "end", nullable = false)
-    private ZonedDateTime end = ZonedDateTime.now();
+    @Column(name = "end_date", nullable = false)
+    private ZonedDateTime end_date = ZonedDateTime.now();
 
     @Column(name = "activated")
     private Boolean activated;
@@ -60,19 +60,19 @@ public class Harvest {
     }
 
     public ZonedDateTime getInit() {
-        return init;
+        return init_date;
     }
 
-    public void setInit(ZonedDateTime init) {
-        this.init = init;
+    public void setInit(ZonedDateTime init_date) {
+        this.init_date = init_date;
     }
 
     public ZonedDateTime getEnd() {
-        return end;
+        return end_date;
     }
 
-    public void setEnd(ZonedDateTime end) {
-        this.end = end;
+    public void setEnd(ZonedDateTime end_date) {
+        this.end_date = end_date;
     }
 
     public Boolean getActivated() {
@@ -97,8 +97,8 @@ public class Harvest {
         response.setId(json.optLong("id", 0));
         response.description = json.getString("description");
         response.mask = json.getString("mask");
-        response.init = Converter.DateUtils.fromString(json.getString("init"));
-        response.end = Converter.DateUtils.fromString(json.getString("end"));
+        response.init_date = Converter.DateUtils.fromString(json.getString("init_date"));
+        response.end_date = Converter.DateUtils.fromString(json.getString("end_date"));
         response.activated = json.getBoolean("activated");
 
         return response;
@@ -110,8 +110,8 @@ public class Harvest {
         object.put("id", this.id);
         object.put("description", this.description);
         object.put("mask", this.mask);
-        object.put("init", this.init);
-        object.put("end", this.end);
+        object.put("init_date", Converter.DateUtils.fromLocalDateTime(this.init_date));
+        object.put("end_date", Converter.DateUtils.fromLocalDateTime(this.end_date));
         object.put("activated", this.activated);
 
         return object;

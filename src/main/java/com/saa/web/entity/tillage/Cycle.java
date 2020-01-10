@@ -30,17 +30,17 @@ public class Cycle {
     @Column(name = "value", precision = 10, scale = 2, nullable = false)
     private BigDecimal value;
 
-    @Column(name = "init", nullable = false)
-    private ZonedDateTime init = ZonedDateTime.now();
+    @Column(name = "init_date", nullable = false)
+    private ZonedDateTime init_date = ZonedDateTime.now();
 
-    @Column(name = "end", nullable = false)
-    private ZonedDateTime end = ZonedDateTime.now();
+    @Column(name = "end_date", nullable = false)
+    private ZonedDateTime end_date = ZonedDateTime.now();
 
-    @ManyToOne(fetch = FetchType.EAGER, targetEntity = User.class)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "harvest", nullable = false)
     private Harvest harvest;
 
-    @ManyToOne(fetch = FetchType.EAGER, targetEntity = User.class)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "culture", nullable = false)
     private Product culture;
 
@@ -81,19 +81,19 @@ public class Cycle {
     }
 
     public ZonedDateTime getInit() {
-        return init;
+        return init_date;
     }
 
-    public void setInit(ZonedDateTime init) {
-        this.init = init;
+    public void setInit(ZonedDateTime init_date) {
+        this.init_date = init_date;
     }
 
     public ZonedDateTime getEnd() {
-        return end;
+        return end_date;
     }
 
-    public void setEnd(ZonedDateTime end) {
-        this.end = end;
+    public void setEnd(ZonedDateTime end_date) {
+        this.end_date = end_date;
     }
 
     public Harvest getHarvest() {
@@ -127,8 +127,8 @@ public class Cycle {
         response.description = json.getString("description");
         response.mask = json.getString("mask");
         response.value = json.getBigDecimal("value");
-        response.init = Converter.DateUtils.fromString(json.getString("init"));
-        response.end = Converter.DateUtils.fromString(json.getString("end"));
+        response.init_date = Converter.DateUtils.fromString(json.getString("init_date"));
+        response.end_date = Converter.DateUtils.fromString(json.getString("end_date"));
 
         Harvest harvest = new Harvest();
         Product product = new Product();
@@ -150,8 +150,8 @@ public class Cycle {
         object.put("culture", this.culture.getId());
         object.put("description", this.description);
         object.put("mask", this.mask);
-        object.put("init", Converter.DateUtils.fromLocalDateTime(this.init));
-        object.put("end", Converter.DateUtils.fromLocalDateTime(this.end));
+        object.put("init_date", Converter.DateUtils.fromLocalDateTime(this.init_date));
+        object.put("end_date", Converter.DateUtils.fromLocalDateTime(this.end_date));
         object.put("value", this.value);
 
         return object;

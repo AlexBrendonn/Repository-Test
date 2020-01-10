@@ -26,8 +26,8 @@ public class Main extends Application {
 
         // <editor-fold defaultstate="collapsed" desc="Listener">
         hash.add(HeaderFilter.class);
-        hash.add(HibernateSessionManager.OpenSession.class);
-        hash.add(HibernateSessionManager.CloseSession.class);
+        //hash.add(HibernateSessionManager.OpenSession.class);
+        //hash.add(HibernateSessionManager.CloseSession.class);
         hash.add(AuthenticationFilter.class);
         // </editor-fold>
 
@@ -43,10 +43,13 @@ public class Main extends Application {
         // </editor-fold>
 
         // <editor-fold defaultstate="collapsed" desc="Routers">
-        hash.add(StatusRouter.class);
+
+        //Authentication
         hash.add(AuthenticationRouter.class);
         hash.add(CompanyRouter.class);
+        hash.add(StatusRouter.class);
 
+        //Held
         hash.add(CstRouter.class);
         hash.add(CfopRouter.class);
         hash.add(SpedRouter.class);
@@ -54,27 +57,31 @@ public class Main extends Application {
         hash.add(StateRouter.class);
         hash.add(CountryRouter.class);
 
+        //Register
+        hash.add(PersonGroupRouter.class);
+        hash.add(PersonRouter.class);
+        hash.add(ProductGroupRouter.class);
+        hash.add(ProductRouter.class);
+        hash.add(UnitRouter.class);
+        hash.add(VehicleRouter.class);
+
+        //Tillage
         hash.add(ApplianceFieldTypeRouter.class);
         hash.add(ApplianceVehicleTypeRouter.class);
         hash.add(ContractTypeRouter.class);
         hash.add(CycleRouter.class);
         hash.add(DiscountTypeRouter.class);
         hash.add(ExchangeConfigurationRouter.class);
-        hash.add(HarvestConfigurationRouter.class);
         hash.add(HarvestRouter.class);
+        hash.add(HarvestConfigurationRouter.class);
         hash.add(PlotRouter.class);
         hash.add(PlotTypeRouter.class);
         hash.add(ServiceTypeRouter.class);
         hash.add(WorkOnVehicleRouter.class);
 
-        hash.add(PersonGroupRouter.class);
-        hash.add(PersonRouter.class);
-        hash.add(ProductRouter.class);
-        hash.add(ProductGroupRouter.class);
-        hash.add(UnitRouter.class);
-        hash.add(VehicleRouter.class);
-
+        //Tributary
         hash.add(RestrictionTaxRouter.class);
+
         // </editor-fold>
 
         return hash;

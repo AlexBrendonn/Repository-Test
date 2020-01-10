@@ -199,6 +199,14 @@ public class Person {
         this.city = city;
     }
 
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
     public String getNote() {
         return note;
     }
