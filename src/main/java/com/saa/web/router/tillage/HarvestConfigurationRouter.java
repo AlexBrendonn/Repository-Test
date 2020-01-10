@@ -12,7 +12,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/harvest_configuration")
+@Path("/tillage/harvest_configuration")
 public class HarvestConfigurationRouter {
     @Context
     HttpServletRequest webRequest;

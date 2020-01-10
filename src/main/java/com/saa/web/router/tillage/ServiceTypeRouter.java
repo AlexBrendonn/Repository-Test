@@ -12,7 +12,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/service_type")
+@Path("/tillage/service_type")
 public class ServiceTypeRouter {
     @Context
     HttpServletRequest webRequest;

@@ -12,7 +12,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/plot")
+@Path("/tillage/plot")
 public class PlotRouter {
     @Context
     HttpServletRequest webRequest;

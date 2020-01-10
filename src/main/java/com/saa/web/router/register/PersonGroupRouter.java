@@ -12,7 +12,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/person_group")
+@Path("/register/person_group")
 public class PersonGroupRouter {
     @Context
     HttpServletRequest webRequest;

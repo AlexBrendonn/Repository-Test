@@ -12,7 +12,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/work_on_vehicle")
+@Path("/tillage/work_on_vehicle")
 public class WorkOnVehicleRouter {
     @Context
     HttpServletRequest webRequest;

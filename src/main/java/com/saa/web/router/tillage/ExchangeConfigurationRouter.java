@@ -12,7 +12,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/exchange_configuration")
+@Path("/tillage/exchange_configuration")
 public class ExchangeConfigurationRouter {
     @Context
     HttpServletRequest webRequest;

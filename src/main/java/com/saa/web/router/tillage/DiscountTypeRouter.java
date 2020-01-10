@@ -12,7 +12,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/discount_type")
+@Path("/tillage/discount_type")
 public class DiscountTypeRouter {
     @Context
     HttpServletRequest webRequest;

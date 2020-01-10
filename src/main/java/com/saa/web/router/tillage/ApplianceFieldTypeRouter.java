@@ -12,7 +12,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/appliance_field_type")
+@Path("/tillage/appliance_field_type")
 public class ApplianceFieldTypeRouter {
     @Context
     HttpServletRequest webRequest;

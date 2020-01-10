@@ -12,7 +12,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/cfop")
+@Path("/held/cfop")
 public class CfopRouter {
     @Context
     HttpServletRequest webRequest;

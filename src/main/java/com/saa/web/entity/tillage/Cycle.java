@@ -1,7 +1,6 @@
 package com.saa.web.entity.tillage;
 
 import com.saa.web.entity.authentication.Organization;
-import com.saa.web.entity.authentication.User;
 import com.saa.web.entity.register.Product;
 import com.saa.web.utils.Converter;
 import org.hibernate.annotations.ColumnDefault;
