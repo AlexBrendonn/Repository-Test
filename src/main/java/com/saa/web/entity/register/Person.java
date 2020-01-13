@@ -64,10 +64,6 @@ public class Person {
     @JoinColumn(name = "city", nullable = false)
     private City city;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "state", nullable = false)
-    private State state;
-
     @Column(name = "note", columnDefinition = "text")
     private String note;
 
@@ -199,14 +195,6 @@ public class Person {
         this.city = city;
     }
 
-    public State getState() {
-        return state;
-    }
-
-    public void setState(State state) {
-        this.state = state;
-    }
-
     public String getNote() {
         return note;
     }
@@ -285,7 +273,6 @@ public class Person {
 
         person.profiles = profiles;
         person.city = city;
-        person.state = state;
         person.group = group;
         person.note = json.optString("note", null);
         //person.enable = json.optBoolean("enable", false);
@@ -313,7 +300,6 @@ public class Person {
         object.put("cep", this.cep);
         object.put("profiles", new JSONObject(this.profiles));
         object.put("city", this.city.getCode());
-        object.put("state", this.state.getCode());
         object.put("note", this.note);
 
         if (this.group.getId() > 0) object.put("group", this.group.getId());
