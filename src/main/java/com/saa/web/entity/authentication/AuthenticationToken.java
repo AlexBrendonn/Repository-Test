@@ -17,7 +17,7 @@ public class AuthenticationToken {
     private String token;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = User.class)
-    @JoinColumn(name = "user_auth", nullable = false, updatable = false)
+    @JoinColumn(name = "user", nullable = false, updatable = false)
     private User user;
 
     @Enumerated(EnumType.STRING)

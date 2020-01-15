@@ -45,7 +45,7 @@ public class OperationType {
     private EOperationEmissionType emissionType;
 
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "operation_type_user", schema = "tributary", joinColumns = @JoinColumn(name = "operation_type_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
+    @JoinTable(name = "operation_type_user", schema = "tributary", joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "user"))
     private List<User> users;
 
     @ManyToOne(fetch = FetchType.LAZY)

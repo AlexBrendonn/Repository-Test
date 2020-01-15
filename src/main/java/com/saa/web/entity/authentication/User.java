@@ -1,6 +1,5 @@
 package com.saa.web.entity.authentication;
 
-import com.saa.web.enumerated.EOrganizationService;
 import com.saa.web.enumerated.EUserPermission;
 import com.saa.web.enumerated.EUserType;
 import org.hibernate.annotations.ColumnTransformer;
@@ -9,9 +8,7 @@ import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Entity(name = "User")
 @Table(name = "user", schema = "authentication")
@@ -37,7 +34,7 @@ public class User implements Serializable {
 
     @ElementCollection(targetClass = EUserPermission.class)
     @Enumerated(EnumType.STRING)
-    @CollectionTable(name = "user_permission", schema = "authentication", joinColumns = @JoinColumn(name = "user_id"))
+    @CollectionTable(name = "user_permission", schema = "authentication", joinColumns = @JoinColumn(name = "id"))
     @Column(name = "permission", columnDefinition = "text")
     private List<EUserPermission> permissions;
 
