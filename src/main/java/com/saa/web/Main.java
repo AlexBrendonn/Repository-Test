@@ -1,11 +1,7 @@
 package com.saa.web;
 
-import com.saa.web.entity.manager.DocumentInstallment;
-import com.saa.web.entity.tillage.ApplianceFieldType;
-import com.saa.web.entity.tributary.OperationType;
 import com.saa.web.resource.filter.AuthenticationFilter;
 import com.saa.web.resource.filter.HeaderFilter;
-import com.saa.web.resource.filter.HibernateSessionManager;
 import com.saa.web.resource.mapper.*;
 import com.saa.web.router.authentication.AuthenticationRouter;
 import com.saa.web.router.authentication.CompanyRouter;

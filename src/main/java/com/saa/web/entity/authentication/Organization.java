@@ -26,7 +26,7 @@ public class Organization {
 
     @ElementCollection(targetClass = EOrganizationService.class)
     @Enumerated(EnumType.STRING)
-    @CollectionTable(name = "organization_service", schema = "authentication", joinColumns = @JoinColumn(name = "id"))
+    @CollectionTable(name = "organization_service", schema = "authentication", joinColumns = @JoinColumn(name = "organization_id"))
     @Column(name = "services", columnDefinition = "text")
     private List<EOrganizationService> services;
 

@@ -37,11 +37,11 @@ public class OperationType {
     private Boolean limitedUser;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "document_type", columnDefinition = "Text", nullable = false)
+    @Column(name = "document_type", columnDefinition = "text", nullable = false)
     private EOperationDocumentType documentType;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "emission_type", columnDefinition = "Text", nullable = false)
+    @Column(name = "emission_type", columnDefinition = "text", nullable = false)
     private EOperationEmissionType emissionType;
 
     @ManyToMany(fetch = FetchType.LAZY)

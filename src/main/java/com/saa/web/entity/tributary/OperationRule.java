@@ -38,7 +38,7 @@ public class OperationRule {
     private BigDecimal estimatedTax;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "search_type", columnDefinition = "Text", nullable = false)
+    @Column(name = "search_type", columnDefinition = "text", nullable = false)
     private EOperationSearchType searchType;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -89,7 +89,7 @@ public class OperationRule {
     private BigDecimal rateValue;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "icms_type", columnDefinition = "Text", nullable = false)
+    @Column(name = "icms_type", columnDefinition = "text", nullable = false)
     private EOperationICMSType icmsType;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -112,11 +112,11 @@ public class OperationRule {
     private BigDecimal mvaRateValue;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "search_type", columnDefinition = "Text", nullable = false)
+    @Column(name = "base_value_modality", columnDefinition = "text", nullable = false)
     private EOperationBaseModality baseValueModality;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "search_type", columnDefinition = "Text", nullable = false)
+    @Column(name = "base_value_type", columnDefinition = "text", nullable = false)
     private EOperationBaseType baseValueType;
     // </editor-fold>
 

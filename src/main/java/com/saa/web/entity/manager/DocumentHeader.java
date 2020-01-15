@@ -79,7 +79,7 @@ public class DocumentHeader {
     private Boolean invalid;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status", columnDefinition = "Text", nullable = false)
+    @Column(name = "status", columnDefinition = "text", nullable = false)
     private EDocumentStatus status;
 
     @Column(name = "note", columnDefinition = "text")

@@ -25,7 +25,7 @@ import javax.ws.rs.core.Response;
 public class TokenJWT {
     private final String secretKey = "FDC78EDA51DE656CB587DA5783FE0B";
     private final String issuer = "www.saasoftware.com.br";
-    private final String audience = "SAA ERP - WEB";
+    private final String audience = "SAA Software LTDA";
     private final Integer expiresAtDays = 2;
 
     private static EllipticCurveJsonWebKey senderJwk;
@@ -55,9 +55,9 @@ public class TokenJWT {
             claims.setNotBeforeMinutesInThePast(2);
             claims.setSubject(user.getOrganization().getNickname() + "." + user.getNickname());
 
-            claims.setClaim("user", user.getId());
-            claims.setClaim("organization", user.getOrganization().getId());
-            claims.setClaim("company", user.getCompany().getId());
+            claims.setClaim("user", user.getNickname());
+            claims.setClaim("organization", user.getOrganization().getNickname());
+            claims.setClaim("company", user.getCompany().getName());
 
             JsonWebSignature jws = new JsonWebSignature();
 

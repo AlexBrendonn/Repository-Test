@@ -37,7 +37,7 @@ public class User implements Serializable {
 
     @ElementCollection(targetClass = EUserPermission.class)
     @Enumerated(EnumType.STRING)
-    @CollectionTable(name = "user_permission", schema = "authentication", joinColumns = @JoinColumn(name = "id"))
+    @CollectionTable(name = "user_permission", schema = "authentication", joinColumns = @JoinColumn(name = "user_id"))
     @Column(name = "permission", columnDefinition = "text")
     private List<EUserPermission> permissions;
 
