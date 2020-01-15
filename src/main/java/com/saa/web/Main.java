@@ -1,6 +1,8 @@
 package com.saa.web;
 
+import com.saa.web.entity.manager.DocumentInstallment;
 import com.saa.web.entity.tillage.ApplianceFieldType;
+import com.saa.web.entity.tributary.OperationType;
 import com.saa.web.resource.filter.AuthenticationFilter;
 import com.saa.web.resource.filter.HeaderFilter;
 import com.saa.web.resource.filter.HibernateSessionManager;
@@ -9,8 +11,14 @@ import com.saa.web.router.authentication.AuthenticationRouter;
 import com.saa.web.router.authentication.CompanyRouter;
 import com.saa.web.router.authentication.StatusRouter;
 import com.saa.web.router.held.*;
+import com.saa.web.router.manager.DocumentHeaderRouter;
+import com.saa.web.router.manager.DocumentInstallmentRouter;
+import com.saa.web.router.manager.DocumentItemRouter;
 import com.saa.web.router.register.*;
 import com.saa.web.router.tillage.*;
+import com.saa.web.router.tributary.OperationRuleRouter;
+import com.saa.web.router.tributary.OperationTypeRouter;
+import com.saa.web.router.tributary.PaymentTypeRouter;
 import com.saa.web.router.tributary.RestrictionTaxRouter;
 
 import javax.ws.rs.ApplicationPath;
@@ -57,6 +65,11 @@ public class Main extends Application {
         hash.add(StateRouter.class);
         hash.add(CountryRouter.class);
 
+        //Manager
+        hash.add(DocumentHeaderRouter.class);
+        hash.add(DocumentInstallmentRouter.class);
+        hash.add(DocumentItemRouter.class);
+
         //Register
         hash.add(PersonGroupRouter.class);
         hash.add(PersonRouter.class);
@@ -81,6 +94,9 @@ public class Main extends Application {
 
         //Tributary
         hash.add(RestrictionTaxRouter.class);
+        hash.add(OperationRuleRouter.class);
+        hash.add(OperationTypeRouter.class);
+        hash.add(PaymentTypeRouter.class);
 
         // </editor-fold>
 

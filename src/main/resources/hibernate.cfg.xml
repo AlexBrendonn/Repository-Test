@@ -28,6 +28,10 @@
         <mapping class="com.saa.web.entity.held.Cfop"/>
         <mapping class="com.saa.web.entity.held.Sped"/>
 
+        <mapping class="com.saa.web.entity.manager.DocumentItem"/>
+        <mapping class="com.saa.web.entity.manager.DocumentHeader"/>
+        <mapping class="com.saa.web.entity.manager.DocumentInstallment"/>
+
         <mapping class="com.saa.web.entity.register.Person"/>
         <mapping class="com.saa.web.entity.register.PersonGroup"/>
         <mapping class="com.saa.web.entity.register.PersonCompany"/>
@@ -54,6 +58,9 @@
         <mapping class="com.saa.web.entity.tributary.RulingFiscal"/>
         <mapping class="com.saa.web.entity.tributary.Numerator"/>
         <mapping class="com.saa.web.entity.tributary.Currency"/>
+        <mapping class="com.saa.web.entity.tributary.OperationRule"/>
+        <mapping class="com.saa.web.entity.tributary.OperationType"/>
+        <mapping class="com.saa.web.entity.tributary.PaymentType"/>
 
         <mapping class="com.saa.web.entity.system.Setting"/>
         <mapping class="com.saa.web.entity.system.Email"/>
