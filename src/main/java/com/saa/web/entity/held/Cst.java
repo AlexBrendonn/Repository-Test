@@ -12,7 +12,7 @@ public class Cst {
     @Column(name = "code", length = 4)
     private String code;
 
-    @Column(name = "description", columnDefinition = "Text", nullable = false)
+    @Column(name = "description", columnDefinition = "text", nullable = false)
     private String description;
 
     public String getCode() {

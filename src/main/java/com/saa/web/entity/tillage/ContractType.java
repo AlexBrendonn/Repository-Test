@@ -19,7 +19,7 @@ public class ContractType {
     private String description;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "type", columnDefinition = "Text", nullable = false)
+    @Column(name = "type", columnDefinition = "text", nullable = false)
     private EContractType type;
 
     @Column(name = "storage")

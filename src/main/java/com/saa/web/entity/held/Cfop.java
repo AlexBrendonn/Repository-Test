@@ -14,15 +14,15 @@ public class Cfop {
     @Column(name = "code", length = 4)
     private String code;
 
-    @Column(name = "description", columnDefinition = "Text", nullable = false)
+    @Column(name = "description", columnDefinition = "text", nullable = false)
     private String description;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "type", columnDefinition = "Text", nullable = false)
+    @Column(name = "type", columnDefinition = "text", nullable = false)
     private ECfopType type;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "destination", columnDefinition = "Text", nullable = false)
+    @Column(name = "destination", columnDefinition = "text", nullable = false)
     private ECfopDestination destination;
 
     public String getCode() {

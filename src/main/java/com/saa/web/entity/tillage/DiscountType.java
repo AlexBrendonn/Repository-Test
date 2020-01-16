@@ -19,7 +19,7 @@ public class DiscountType {
     private String description;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "field", columnDefinition = "Text", nullable = false)
+    @Column(name = "field", columnDefinition = "text", nullable = false)
     private EDiscountTypeField field;
 
     @ManyToOne(fetch = FetchType.LAZY)
